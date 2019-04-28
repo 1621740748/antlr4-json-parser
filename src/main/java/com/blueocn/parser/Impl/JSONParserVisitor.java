@@ -41,7 +41,31 @@ public class JSONParserVisitor implements com.blueocn.parser.JSONParserVisitor<B
         builder = Query.builder();
     }
 
-    @Override
+    public Stack<Object> getStack() {
+		return stack;
+	}
+
+	public void setStack(Stack<Object> stack) {
+		this.stack = stack;
+	}
+
+	public Query getQuery() {
+		return query;
+	}
+
+	public void setQuery(Query query) {
+		this.query = query;
+	}
+
+	public Query.QueryBuilder getBuilder() {
+		return builder;
+	}
+
+	public void setBuilder(Query.QueryBuilder builder) {
+		this.builder = builder;
+	}
+
+	@Override
     public Boolean visit(ParseTree tree) {
         if (tree instanceof ProgContext) {
             if (visitProg((ProgContext) tree)) {

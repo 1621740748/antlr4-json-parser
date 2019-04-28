@@ -13,7 +13,24 @@ public class Query {
     private final Integer                    top;
     private final String                     order;
 
-    private Query(List<String> groupby, List<Pair<String, Object>> idAndV, Integer top, String order) {
+    
+    public List<String> getGroupby() {
+		return groupby;
+	}
+
+	public List<Pair<String, Object>> getIdAndV() {
+		return idAndV;
+	}
+
+	public Integer getTop() {
+		return top;
+	}
+
+	public String getOrder() {
+		return order;
+	}
+
+	private Query(List<String> groupby, List<Pair<String, Object>> idAndV, Integer top, String order) {
         this.groupby = groupby;
         this.idAndV = idAndV;
         this.top = top;
